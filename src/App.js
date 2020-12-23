@@ -21,7 +21,6 @@ function App() {
   const convertToGif = async () => {
     // Write the file to memory 
     ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video));
-
     // Run the FFMpeg command
     await ffmpeg.run('-i', 'test.mp4', '-t', '2.5', '-ss', '2.0', '-f', 'gif', 'out.gif');
 
